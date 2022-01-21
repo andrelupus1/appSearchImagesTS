@@ -95,13 +95,11 @@ const LogoTitle = (...props: any) => {
 };
 function getHeaderTitle(navigation: any, route: any) {
   const { params } = route;
-  console.log(params);
-
   return (
     <SafeAreaView>
       <View style={{ flex: 1, flexDirection: "row" }}>
         <Text onPress={() => navigation.goBack("Root")}>
-          {"< " + params.title}
+          {"< " + (params.title ? params.title : ``)}
         </Text>
       </View>
     </SafeAreaView>

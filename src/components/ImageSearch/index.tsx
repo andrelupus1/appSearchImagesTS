@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Image,
   TouchableHighlight,
-  ScrollView,
   Dimensions,
 } from "react-native";
 import { Searchbar } from "react-native-paper";
@@ -65,7 +64,7 @@ export default function index({ onPressItem }: any) {
               }}
             >
               <Image
-                resizeMode="cover"
+                resizeMode="contain"
                 style={styles.image}
                 source={{ uri: item.images.original.url }}
               />
@@ -84,7 +83,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   image: {
-    flex: 1,
     width: 250,
     height: 250,
     borderWidth: 1,
@@ -94,7 +92,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     margin: 1,
-    height: Dimensions.get("screen").height,
+    height: Dimensions.get("window").height,
     marginHorizontal: 20,
   },
 });
