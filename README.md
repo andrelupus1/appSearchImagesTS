@@ -1,14 +1,12 @@
 # appSearchImagesTS
 
-## Execute o comando para rodar o projeto localmente
+## ⚙️Execute o comando para rodar o projeto localmente
 
 ```
 yarn start
 ```
 
-ou
-
-⚙️ Expo:
+ou para testar no celular com o Expo:
 Learn more: https://expo.fyi/project-page
 
 ```
