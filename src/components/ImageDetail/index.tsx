@@ -13,7 +13,6 @@ export default function Index({ data }: any) {
 const styles = StyleSheet.create({
   container: {
     color: "#fffff",
-    backgroundColor: "#222222",
     alignItems: "center",
     padding: 1,
   },

@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     padding: 10,
-    backgroundColor: "dark",
   },
   image: {
     flex: 1,
@@ -96,7 +95,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     margin: 1,
     height: Dimensions.get("screen").height,
-    backgroundColor: "dark",
     marginHorizontal: 20,
   },
 });
