@@ -49,10 +49,10 @@ export default function index({ onPressItem }: any) {
         value={term}
       />
 
-      <FlatList
-        data={gifs}
-        renderItem={({ item }: any) => (
-          <View style={styles.scrollView}>
+      <View style={styles.scrollView}>
+        <FlatList
+          data={gifs}
+          renderItem={({ item }: any) => (
             <TouchableHighlight
               onPress={() => {
                 let param = {
@@ -69,9 +69,9 @@ export default function index({ onPressItem }: any) {
                 source={{ uri: item.images.original.url }}
               />
             </TouchableHighlight>
-          </View>
-        )}
-      />
+          )}
+        />
+      </View>
     </View>
   );
 }
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    padding: 10,
+    padding: 1,
   },
   image: {
     width: 250,
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     margin: 1,
-    height: Dimensions.get("window").height,
-    marginHorizontal: 20,
+    height: 50,
+    marginHorizontal: 5,
   },
 });
