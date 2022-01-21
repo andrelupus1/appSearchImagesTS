@@ -17,8 +17,8 @@ Learn more: https://expo.fyi/project-page
 
 ## Melhorias futuras:
 
-- Implementar theme
-- Melhorar style
-- Debugar IOS
+- Melhorar theme style
+- Melhorar navigation
+- Corrigir alguns bugs
 
 ## Observações: Protótipo homologado na versão web e android.

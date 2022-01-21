@@ -4,10 +4,11 @@ import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
+  RouteProp,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
-import { ColorSchemeName, Pressable, Image, View } from "react-native";
+import { ColorSchemeName, Pressable, Image, View, Text } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -22,6 +23,7 @@ import {
   RootTabScreenProps,
 } from "../../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function Navigation({
   colorScheme,
@@ -29,12 +31,14 @@ export default function Navigation({
   colorScheme: ColorSchemeName;
 }) {
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-    >
-      <RootNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer
+        linking={LinkingConfiguration}
+        theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+      >
+        <RootNavigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 
@@ -89,6 +93,21 @@ const LogoTitle = (...props: any) => {
     </View>
   );
 };
+function getHeaderTitle(navigation: any, route: any) {
+  const { params } = route;
+  console.log(params);
+
+  return (
+    <SafeAreaView>
+      <View style={{ flex: 1, flexDirection: "row" }}>
+        <Text onPress={() => navigation.goBack("Root")}>
+          {"< " + params.title}
+        </Text>
+      </View>
+    </SafeAreaView>
+  );
+}
+
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
@@ -105,7 +124,7 @@ function BottomTabNavigator() {
         options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
           title: "",
           headerTitle: (props) => <LogoTitle {...props} />,
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarIcon: () => null,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate("Modal")}
@@ -126,7 +145,19 @@ function BottomTabNavigator() {
           // headerShown: false
         })}
       />
-      {/* <BottomTab.Screen name="Detail" component={DetailScreen} /> */}
+      <BottomTab.Screen
+        name="Detail"
+        component={DetailScreen}
+        options={({
+          navigation,
+          route,
+        }: RootTabScreenProps<"Detail"> | any) => ({
+          title: "Detalhes",
+          headerTitle: () => getHeaderTitle(navigation, route),
+          tabBarIcon: () => null,
+          tabBarLabel: () => null,
+        })}
+      />
     </BottomTab.Navigator>
   );
 }

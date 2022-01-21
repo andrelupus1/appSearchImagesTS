@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Linking, Platform, StyleSheet } from "react-native";
 import { Text, View } from "../components/Themed";
-import { Appbar, Card, Title, Paragraph } from "react-native-paper";
+import { Card, Title, Paragraph } from "react-native-paper";
 import { RootStackScreenProps } from "../../types";
 
 export default function ModalScreen({

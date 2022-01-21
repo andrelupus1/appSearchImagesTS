@@ -57,7 +57,7 @@ export default function index({ onPressItem }: any) {
             <TouchableHighlight
               onPress={() => {
                 let param = {
-                  tilte: item.title,
+                  title: item.title,
                   id: item.id,
                   url: item.images.original.url,
                 };

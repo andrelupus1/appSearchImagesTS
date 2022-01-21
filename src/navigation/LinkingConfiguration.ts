@@ -14,13 +14,14 @@ const linking: LinkingOptions<RootStackParamList> = {
               TabOneScreen: "one",
             },
           },
-          Detail: {
-            screens: {
-              DetailScreen: "detail",
-            },
-          },
+          // Detail: {
+          //   screens: {
+          //     DetailScreen: "detail",
+          //   },
+          // },
         },
       },
+      Detail: "detail",
       Modal: "modal",
       NotFound: "*",
     },

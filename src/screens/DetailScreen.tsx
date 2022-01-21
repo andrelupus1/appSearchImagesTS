@@ -1,11 +1,9 @@
 import React from "react";
 import { Platform, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Text, View } from "../components/Themed";
-import { Button, Appbar } from "react-native-paper";
+import { View } from "../components/Themed";
 import ImageDetail from "../components/ImageDetail";
 import { RootStackScreenProps } from "../../types";
-import { CommonActions } from "@react-navigation/native";
 
 export default function DetailScreen({
   navigation,
@@ -14,7 +12,6 @@ export default function DetailScreen({
   return (
     <View style={styles.container}>
       <ImageDetail data={route.params} />
-      {console.log(route.params)}
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
     </View>
   );

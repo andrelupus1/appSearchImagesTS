@@ -1,6 +1,5 @@
 import * as React from "react";
 import { StyleSheet, Image } from "react-native";
-import { Card, Title } from "react-native-paper";
 import { View } from "../Themed";
 
 export default function Index({ data }: any) {
@@ -19,7 +18,7 @@ const styles = StyleSheet.create({
     padding: 1,
   },
   image: {
-    marginVertical:1,
+    marginVertical: 1,
     width: 400,
     height: 400,
     borderWidth: 1,
